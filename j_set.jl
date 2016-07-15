@@ -47,3 +47,6 @@ end
 
 writedlm("out.txt",in_set_iteration)
 
+using PyPlot
+
+mathshow(in_set_iteration)
