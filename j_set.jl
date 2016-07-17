@@ -36,7 +36,9 @@ end
 
 x = -2.:0.01:2.
 y = -2.:0.01:2.
-c =  [-0.7269, 0.1889] #=[rand(1:1000)/1000., rand(1:1000)/1000.]
+c =  [rand(-1000:1000)/1000., rand(-1000:1000)/1000.] #= [-0.7269, 0.1889] 
+
+println(c[1], "  ", c[2])
 
 in_set_iteration = Array(Int, length(x), length(y))
 for (i,a) in enumerate(x), (j,b) in enumerate(y)
@@ -46,4 +48,8 @@ for (i,a) in enumerate(x), (j,b) in enumerate(y)
 end
 
 writedlm("out.txt",in_set_iteration)
+
+using PyPlot
+
+matshow(in_set_iteration)
 
